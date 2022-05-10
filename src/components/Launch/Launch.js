@@ -14,25 +14,25 @@ const Launch = (props) => {
                 <Card.Body>
                     <Card.Title className='text-center fw-bold fs-4 mb-4 text-primary text-uppercase'>{mission_name}</Card.Title>
                     <Card.Text>
-                        Launch year: <span className='fw-bold '>{launch_year} </span><br />
-                        Date: {launch_date_utc}
-                        Rocket Name: {rocket.rocket_name}
+                        <span className='fw-bold fs-5'> Launch year: </span>{launch_year} <br />
+                        <span className='fw-bold fs-5'> Date:</span> {launch_date_utc} <br />
+                        <span className='fw-bold fs-5'> Rocket Name:</span> {rocket.rocket_name}
                     </Card.Text>
-                    <Card.Text>
-                        Status: {launch_success
+                    <Card.Text className='text-center'>
+                        {launch_success
                             ?
-                            "Successfully Launched"
-                            : `Launch Failed due to ${launch_failure_details?.reason}`
+                            <span className='text-success fw-bold fs-5'>Successfully Launched</span>
+                            : <span className='text-danger fw-bold fs-6'>Launch Failed due to {launch_failure_details?.reason}</span>
                         }
                     </Card.Text>
                 </Card.Body>
-                <Card.Footer>
+                <Card.Footer className='text-end'>
                     <small className="text-muted">
                         {nationality}
                     </small>
                 </Card.Footer>
             </Card>
-        </Col>
+        </Col >
 
     );
 };
