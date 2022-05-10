@@ -8,17 +8,18 @@ const Launch = (props) => {
 
 
     return (
-        <Col md={3}>
-            <Card>
-                <Card.Img variant="top" src={links.mission_patch} />
+        <Col md={4}>
+            <Card className="me-3 ms-3 mb-3">
+                <Card.Img variant="top" src={links.mission_patch} className="p-5" />
                 <Card.Body>
-                    <Card.Title>{mission_name}</Card.Title>
+                    <Card.Title className='text-center fw-bold fs-4 mb-4 text-primary text-uppercase'>{mission_name}</Card.Title>
                     <Card.Text>
-                        This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.
+                        Launch year: <span className='fw-bold '>{launch_year} </span><br />
+                        Date: {launch_date_utc}
+                        Rocket Name: {rocket.rocket_name}
                     </Card.Text>
                     <Card.Text>
-                        {launch_success
+                        Status: {launch_success
                             ?
                             "Successfully Launched"
                             : `Launch Failed due to ${launch_failure_details?.reason}`

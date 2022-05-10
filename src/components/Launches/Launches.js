@@ -17,9 +17,9 @@ const Launches = ({ allLaunches, displayedRocket, setInputValue, inputValue, set
 
     return (
         <>
-            <Container>
+            <Container className='mt-5'>
                 <Row>
-                    <Col md={3} className="bg-white">
+                    <Col md={2} className="bg-white">
                         <h2>Filters</h2>
                         <div>
                             <h4>Launch Year</h4>
@@ -35,7 +35,7 @@ const Launches = ({ allLaunches, displayedRocket, setInputValue, inputValue, set
                             <h4></h4>
                         </div>
                     </Col>
-                    <Col md={9}>
+                    <Col md={10}>
                         <Row>
                             {
                                 inputValue ? displayedRocket.map(launch => <Launch
