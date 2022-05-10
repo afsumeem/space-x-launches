@@ -12,7 +12,7 @@ const Launches = ({ allLaunches, displayedRocket, setInputValue, inputValue, set
         setSuccessfulLaunch(successfulLaunches)
     }
 
-
+    // upcoming launches
     const [upcomingLaunch, setUpcomingLaunch] = useState(allLaunches)
     const [upcomingBtn, setUpcomingBtn] = useState('')
 
@@ -21,6 +21,16 @@ const Launches = ({ allLaunches, displayedRocket, setInputValue, inputValue, set
         const matchedUpcomingLaunch = allLaunches.filter(launches => launches?.upcoming != null)
         const upcomingLaunches = matchedUpcomingLaunch.filter(launch => launch.upcoming.toString().includes(upcomingBtn))
         setUpcomingLaunch(upcomingLaunches)
+    }
+
+    // launch year
+    const [launchYear, setLaunchYear] = useState('')
+    const [selectedLaunchYear, setSelectedLaunchYear] = useState(allLaunches)
+
+    const handleLaunchYear = (e) => {
+        setLaunchYear(e.target.value)
+        const rocketLaunchYear = allLaunches.filter(launch => launch.launch_year.toString().includes(launchYear))
+        setSelectedLaunchYear(rocketLaunchYear)
     }
 
 
@@ -33,19 +43,22 @@ const Launches = ({ allLaunches, displayedRocket, setInputValue, inputValue, set
                         <div className='mt-5 mb-5'>
                             <h5>Launch Year</h5>
                             <div>
-                                <DropdownButton id="dropdown-item-button" className='btn' title="Launch Year">
-                                    <Dropdown.Item as="button">2008</Dropdown.Item>
-                                    <Dropdown.Item as="button">2007</Dropdown.Item>
-                                    <Dropdown.Item as="button">2006</Dropdown.Item>
-                                    <Dropdown.Item as="button">2010</Dropdown.Item>
-                                    <Dropdown.Item as="button">2012</Dropdown.Item>
-                                    <Dropdown.Item as="button">2013</Dropdown.Item>
-                                    <Dropdown.Item as="button">2014</Dropdown.Item>
-                                    <Dropdown.Item as="button">2015</Dropdown.Item>
-                                    <Dropdown.Item as="button">2016</Dropdown.Item>
-                                    <Dropdown.Item as="button">2017</Dropdown.Item>
-                                    <Dropdown.Item as="button">2018</Dropdown.Item>
-                                </DropdownButton>
+                                <select onChange={(e) => handleLaunchYear(e)
+                                }>
+                                    <option value="2008">2008</option>
+                                    <option value="2007">2007</option>
+                                    <option value="2006">2006</option>
+                                    <option value="2010">2010</option>
+                                    <option value="2012">2012</option>
+                                    <option value="2013">2013</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2014">2014</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2009">2009</option>
+                                </select>
+
                             </div>
                         </div>
 
@@ -89,11 +102,18 @@ const Launches = ({ allLaunches, displayedRocket, setInputValue, inputValue, set
                                             >
                                             </Launch>)
                                             :
-                                            allLaunches.map(launch => <Launch
-                                                key={launch.mission_name}
-                                                launch={launch}
-                                            >
-                                            </Launch>)
+                                            launchYear ?
+                                                selectedLaunchYear.map(launch => <Launch
+                                                    key={launch.mission_name}
+                                                    launch={launch}
+                                                >
+                                                </Launch>)
+                                                :
+                                                allLaunches.map(launch => <Launch
+                                                    key={launch.mission_name}
+                                                    launch={launch}
+                                                >
+                                                </Launch>)
                             }
 
                         </Row>
