@@ -8,6 +8,8 @@ import { useDispatch, useSelector } from "react-redux";
 const Home = () => {
     const dispatch = useDispatch();
     const [inputValue, setInputValue] = useState('')
+    const [buttonValue, setButtonValue] = useState("");
+
     // Getting all launches from store
     const allLaunches = useSelector(
         (state) => state.launches.allLaunches
@@ -35,6 +37,8 @@ const Home = () => {
                 setDisplayedRocket={setDisplayedRocket}
                 inputValue={inputValue}
                 setInputValue={setInputValue}
+                buttonValue={buttonValue}
+                setButtonValue={setButtonValue}
             />
         </>
     );
