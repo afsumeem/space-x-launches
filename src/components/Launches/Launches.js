@@ -20,16 +20,19 @@ const Launches = ({ allLaunches, displayedRocket, setInputValue, inputValue, set
             <Container className='mt-5'>
                 <Row>
                     <Col md={2} className="bg-white">
-                        <h2>Filters</h2>
-                        <div>
-                            <h4>Launch Year</h4>
+                        <h4 className='text-center text-uppercase text-primary fw-bold mt-5'>Filters</h4>
+                        <div className='mt-5 mb-5'>
+                            <h5>Launch Year</h5>
 
                         </div>
 
                         <div>
-                            <h4>Successful Launch</h4>
-                            <Button onClick={handleClick} value="true" className='m-1'>True</Button>
-                            <Button onClick={handleClick} value="false">False</Button>
+                            <h5>Successful Launches</h5>
+                            <div className='d-block m-auto w-100 ms-3 me-3'>
+                                <Button onClick={handleClick} value="true" className='btn-success m-1'>Success</Button>
+                                <Button onClick={handleClick} value="false" className='btn-danger'>Failed</Button>
+                            </div>
+
                         </div>
                         <div>
                             <h4></h4>
