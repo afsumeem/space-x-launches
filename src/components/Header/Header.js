@@ -14,7 +14,7 @@ const Header = ({ allLaunches, setDisplayedRocket, setInputValue, inputValue }) 
     return (
         <div>
             <Navbar bg="dark" expand="lg"  >
-                <Container fluid>
+                <Container>
                     <Navbar.Brand href="#" className='text-white fs-2 fw-bold'>SpaceX</Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
