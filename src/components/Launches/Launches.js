@@ -16,9 +16,9 @@ const Launches = () => {
     }, []);
 
     return (
-        <div>
+        <>
             <h1>{allLaunches.length}</h1>
-        </div>
+        </>
     );
 };
 
