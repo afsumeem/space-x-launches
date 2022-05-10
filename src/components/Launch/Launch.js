@@ -2,12 +2,15 @@ import React from 'react';
 import { Card, Col } from 'react-bootstrap';
 
 const Launch = (props) => {
-    const { mission_name } = props.launch;
-    return (
+    const { mission_name, links, launch_year, launch_date_utc, launch_success, rocket } = props.launch;
 
-        <Col md={4}>
+    const nationality = rocket?.second_stage?.payloads.map(payload => payload.nationality)
+
+
+    return (
+        <Col md={3}>
             <Card>
-                <Card.Img variant="top" src="holder.js/100px160" />
+                <Card.Img variant="top" src={links.mission_patch} />
                 <Card.Body>
                     <Card.Title>{mission_name}</Card.Title>
                     <Card.Text>
@@ -16,7 +19,9 @@ const Launch = (props) => {
                     </Card.Text>
                 </Card.Body>
                 <Card.Footer>
-                    <small className="text-muted">Last updated 3 mins ago</small>
+                    <small className="text-muted">
+                        {nationality}
+                    </small>
                 </Card.Footer>
             </Card>
         </Col>
