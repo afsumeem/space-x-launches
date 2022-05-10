@@ -52,8 +52,8 @@ const Launches = ({ allLaunches, displayedRocket, setInputValue, inputValue, set
                         <div>
                             <h5>Successful Launches</h5>
                             <div className='d-block m-auto w-100'>
-                                <Button onClick={handleClick} value="true" className='btn btn-success me-1'>Success</Button>
-                                <Button onClick={handleClick} value="false" className='btn btn-danger w-50'>Failed</Button>
+                                <Button onClick={handleClick} value="true" className='btn btn-success px-3 me-2'>Success</Button>
+                                <Button onClick={handleClick} value="false" className='btn btn-danger px-3'>Failed</Button>
                             </div>
                         </div>
 
