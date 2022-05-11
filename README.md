@@ -1,8 +1,7 @@
 # space-x-launches
 
- [Live Site](https://space-x-launches-mu.vercel.app/).
+ [Live Site](https://space-x-launches-mu.vercel.app/)
 
-# space-x-launches
 
 ### Built With
 
