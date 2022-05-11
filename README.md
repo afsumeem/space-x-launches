@@ -1,5 +1,21 @@
-# Getting Started with Create React App
+# space-x-launches
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ [Live Site](https://space-x-launches-mu.vercel.app/).
 
 # space-x-launches
+
+### Built With
+
+- React.Js
+- Redux Toolkit
+- React Bootstrap
+- Axios
+
+
+### Steps 
+
+- Install React App
+- Install NPM Packages- React Bootstrap, Redux, Redux Toolkit, axios
+- Redux Setup 
+- Write the necessary code for Home page
+- Deploy site on vercel.com
